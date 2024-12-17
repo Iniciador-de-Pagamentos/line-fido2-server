@@ -1,6 +1,4 @@
-spring:
-  profiles:
-    active: local
+spring:  
   h2:
     console:
       enabled: true

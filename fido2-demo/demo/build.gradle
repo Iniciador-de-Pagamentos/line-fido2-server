@@ -90,6 +90,8 @@ dependencies {
 
     //local db
     runtimeOnly('com.h2database:h2')
+    runtimeOnly('org.postgresql:postgresql')
+
 
     //redis client
     implementation('redis.clients:jedis')
