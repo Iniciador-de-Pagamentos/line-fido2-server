@@ -7,7 +7,7 @@ on:
       - main
 
 env:
-  aws_region: ${{ vars.AWS_REGION }}
+  aws_region: 'us-east-2'
   dockerfile_path: fido2-demo/demo/Dockerfile
   container_image_uri: 911167901271.dkr.ecr.us-east-2.amazonaws.com/detentora/fido-server
   environment: ${{ github.ref == 'refs/heads/main' && 'production' || 'sandbox' }} 
