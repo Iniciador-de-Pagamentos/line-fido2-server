@@ -105,10 +105,10 @@ public class AttestationObjectDeserializer extends StdDeserializer<AttestationOb
                 attestationStatement = AndroidKeyAttestationStatement.class;
                 break;
             }
-            case ANDROID_SAFETYNET: {
-                attestationStatement = AndroidSafetyNetAttestationStatement.class;
-                break;
-            }
+            // case ANDROID_SAFETYNET: {
+            //     attestationStatement = AndroidSafetyNetAttestationStatement.class;
+            //     break;
+            // }
             case FIDO_U2F: {
                 attestationStatement = FidoU2fAttestationStatement.class;
                 break;

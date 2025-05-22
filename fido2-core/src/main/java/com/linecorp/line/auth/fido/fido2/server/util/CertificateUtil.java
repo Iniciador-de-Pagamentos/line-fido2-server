@@ -101,9 +101,9 @@ public class CertificateUtil {
                 return null;
             }
         } else if (attestationVerificationResult.getFormat()
-                == AttestationStatementFormatIdentifier.ANDROID_KEY ||
+                == AttestationStatementFormatIdentifier.ANDROID_KEY /*||
                 attestationVerificationResult.getFormat()
-                        == AttestationStatementFormatIdentifier.ANDROID_SAFETYNET) {
+                        == AttestationStatementFormatIdentifier.ANDROID_SAFETYNET*/) {
             // get google root certificates
             return vendorSpecificMetadataService
                     .getAttestationRootCertificates(AuthenticatorVendor.fromValue("google"));
