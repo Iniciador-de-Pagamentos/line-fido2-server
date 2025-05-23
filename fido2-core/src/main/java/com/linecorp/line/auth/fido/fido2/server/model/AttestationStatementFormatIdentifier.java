@@ -28,7 +28,7 @@ public enum AttestationStatementFormatIdentifier {
     PACKED("packed"),
     TPM("tpm"),
     ANDROID_KEY("android-key"),
-    ANDROID_SAFETYNET("android-safetynet"),
+//    ANDROID_SAFETYNET("android-safetynet"),
     FIDO_U2F("fido-u2f"),
     NONE("none"),
     APPLE_ANONYMOUS("apple");

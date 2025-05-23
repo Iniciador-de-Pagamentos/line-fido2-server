@@ -40,9 +40,11 @@ public class AttestationStatementHelper {
             return objectMapper.readValue(input, TpmAttestationStatement.class);
         } else if (identifier == AttestationStatementFormatIdentifier.ANDROID_KEY) {
             return objectMapper.readValue(input, AndroidKeyAttestationStatement.class);
-        } else if (identifier == AttestationStatementFormatIdentifier.ANDROID_SAFETYNET) {
-            return objectMapper.readValue(input, AndroidSafetyNetAttestationStatement.class);
-        } else if (identifier == AttestationStatementFormatIdentifier.FIDO_U2F) {
+        }
+//        else if (identifier == AttestationStatementFormatIdentifier.ANDROID_SAFETYNET) {
+//            return objectMapper.readValue(input, AndroidSafetyNetAttestationStatement.class);
+//        }
+        else if (identifier == AttestationStatementFormatIdentifier.FIDO_U2F) {
             return objectMapper.readValue(input, FidoU2fAttestationStatement.class);
         } else {
             return objectMapper.readValue(input, NoneAttestationStatementFormat.class);
