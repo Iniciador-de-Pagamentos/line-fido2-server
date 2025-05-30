@@ -147,25 +147,9 @@ public class ResponseServiceImpl extends ResponseCommonService implements Respon
 
     @Override
     protected void checkOrigin(URI originFromClientData, URI originFromRp) {
-        final String ANDROID_FACET_SCHEME = "android";
-        final String IOS_FACET_SCHEME = "ios";
-
-        if (originFromClientData.getScheme().equals(ANDROID_FACET_SCHEME) ||
-                originFromClientData.getScheme().equals(IOS_FACET_SCHEME)) {
-            //app case
-            List<String> appOriginList = appOriginService.getOrigins(originFromRp.toString());
-
-            if (!appOriginList.contains(originFromClientData.toString())) {
-                throw new FIDO2ServerRuntimeException(InternalErrorCode.ORIGIN_NOT_MATCHED,
-                        "Client facet origin: " + originFromClientData + ", App Origin List: " + appOriginList);
-            }
-
-        } else {
-            // web case
-            if (!originFromRp.toString().equals(originFromClientData.toString())) {
-                throw new FIDO2ServerRuntimeException(InternalErrorCode.ORIGIN_NOT_MATCHED,
-                        "From collected data: " + originFromClientData + ", From request param: " + originFromRp);
-            }
+        if (!originFromRp.toString().equals(originFromClientData.toString())) {
+            throw new FIDO2ServerRuntimeException(InternalErrorCode.ORIGIN_NOT_MATCHED,
+                    "From collected data: " + originFromClientData + ", From request param: " + originFromRp);
         }
     }
 
